@@ -2,4 +2,5 @@
 
 ## Standard
 the Reborn Standard repository. \
-[open in website](https://reborn.ct.ws/std)
+\
+[![open in website](https://img.shields.io/badge/open%20in-website-red?style=flat)](https://reborn.ct.ws/std)
