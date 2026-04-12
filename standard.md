@@ -78,14 +78,14 @@ Formatting **rules** and Styling _recommendations_:
 - Entry point does not require a declared `return` type. \
   Example:
   
-  ```
+  ```c
   // Implicitly of type void
-  main := () {
-      return;
-  }
+  main := () {              
+      return;               
+  }                         
   ```
 
-- The entry point can also be defined as `main: void() { ... }`
+- The entry point can also be defined as `main: void = () { ... }`
 
 - If present, `main()` should be the last global definition in the file. \
   \#Clarification: with _"if present"_ we mean that in specific instances like header files you don't _need_ an entry point.
