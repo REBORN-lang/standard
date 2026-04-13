@@ -1,6 +1,6 @@
 # Reborn Standard (RS)
 
-### Revision 26014
+### Revision 26015
 
 ## Purpose
 
@@ -213,14 +213,16 @@ Below there are examples of valid forms of variable declaration.
 
 - `else` must be the final branch for a conditional group.
 
-- It is recommended to group related branches into a single structure:
+- It is recommended to group related branches into a single clean structure:
   
   ```
   if (condition) {
     ...
-  } elif (other) {
+  }
+  elif (other) {
     ...
-  } else {
+  }
+  else {
     ...
   }
   ```
@@ -236,9 +238,11 @@ Below there are examples of valid forms of variable declaration.
   for::n {
       ...
   }
+  
+  // Obviously 'for :: n {}' is also valid
   ```
   With `n` being an integer positive number. \
-  This is syntactic sugar that will resolve to a normal C `for (int i = 1; i < n; i++)`.
+  This is syntactic sugar that will resolve to e.g. C `for (int i = 0; i < n; i++)`.
 
 ---
 
