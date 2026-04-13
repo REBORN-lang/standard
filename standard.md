@@ -1,6 +1,6 @@
 # Reborn Standard (RS)
 
-### Revision 26013
+### Revision 26014
 
 ## Purpose
 
@@ -525,6 +525,36 @@ Here is every reserved keyword in Reborn.
 
 ---
 
+# R16. Language Extensions
+
+Reborn has *specified, non-standard* language extensions that *may be* available in your compiler implementation of the language. \
+These extensions are thought as QOL improvements and features that were deemed to be *not of high-enough importance* to be added officially into the Standard.
+
+> (!) Note: Members and contributors outside of the Rbn. Std. Ct. are allowed to propose ideas to expand this section. Be mindful of what you share, as only high-quality and actual QOL improvements will be accepted into this section.
+
+### 1. Braceless multi-instruction control flow statements
+
+This extension, adds `:` as an operator. \
+The `:` operator allows for multi-instruction control flow statements, as shown in the following example:
+```
+// Required for multiple instructions
+if x:
+ printf("x\n");
+ return x;
+
+// Standard non-ambiguous
+elif y {
+ printf("y\n");
+ return y;
+}
+
+// Not required for a single instruction
+else
+ return 0;
+```
+
+---
+
 # Appendix A
 
 Every program created by the **REBORN-lang** organization and/or its <u>[GitHub account](https://github.com/REBORN-lang)</u>, that is written in the Reborn programming language, must comply with the latest available revision of the **RS**; \
@@ -549,6 +579,16 @@ The only recognized compiler implementations of **Reborn** are specified here:
 
 # Appendix D
 
-When the word '**symbol**' is used, any *function*, *variable*, etc, etc.. is meant.
+When the word '**symbol**' is used, any *function*, *variable*, (etc..) is meant.
 
 ---
+
+# Appendix E
+
+Some compiler implementations of Reborn may choose to implement the Extensions, aforementioned in this specification. \
+These extensions of the language are *not* always supported by compiler implementations because developers are, *per this standard*, not required to support them.
+&nbsp;
+- Annotation I. If you are a compiler developer working on an implementation of Reborn, it is however recommended to make these extensions available under some specific flag or option.
+
+---
+
