@@ -1,6 +1,6 @@
 # Reborn Standard (RS)
 
-### Revision 26015
+### Revision 26016
 
 ## Purpose
 
@@ -508,7 +508,7 @@ Here is every reserved keyword in Reborn.
   
   ### Conditionals
 
-- `if`, `elif`, `else`, `for`, `while`
+- `if`, `elif`, `else`, `for`, `while`, `break`
 
 - `&&`, `||`, `&`, `|`
   
@@ -538,7 +538,10 @@ These extensions are thought as QOL improvements and features that were deemed t
 
 ### 1. Braceless multi-instruction control flow statements
 
-This extension, adds `:` as an operator. \
+> (!) This extension was not accepted as a standardized language feature because of the ambiguity of the `:` operator. \
+> Said operator is also utilized in object declarations (such as the ones in **R4.1** and **R5.1**).
+
+This extension, adds the `:` operator. \
 The `:` operator allows for multi-instruction control flow statements, as shown in the following example:
 ```
 // Required for multiple instructions
@@ -555,6 +558,27 @@ elif y {
 // Not required for a single instruction
 else
  return 0;
+
+// Also valid for loops
+while true:
+  break;
+```
+
+If your compiler implementation aims to support this extension, it is recommended for you to check whitespace around the blocks using the `:` operator. **This does not change the fact that Reborn, usually ignores whitespace.**
+
+
+### 2. Extending braceless blocks
+
+> (!) This extensions, is an extension of the *Braceless mutli-instruction control flow statements* extension.
+
+This extension provides a more Python-like feel to *every* block in the Reborn programming language. \
+It is recommended to, if implemented, check whitespace around blocks to eliminate all sort of ambiguity.
+&nbsp;
+Conceptually:
+```
+let function: int = (x: int):
+ if x > 0:
+  return x;
 ```
 
 ---
